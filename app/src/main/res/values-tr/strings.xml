@@ -72,7 +72,6 @@
     <string name="pref_look_and_feel_colors_message">Mesaj rengi</string>
     <string name="pref_look_and_feel_colors_weather">Hava durumu rengi</string>
     <string name="pref_look_and_feel_colors_notification">Bildirim rengi</string>
-    <string name="pref_look_and_feel_colors_fingerprint">Parmak izi simge rengi</string>
     <string name="pref_ao_showClock">Saati göster</string>
     <string name="pref_ao_showDate">Tarihi göster</string>
     <string name="pref_ao_showBatteryIcn">Bir pil simgesi görüntüleyin</string>
@@ -80,9 +79,6 @@
     <string name="pref_ao_showMusicControls">Müzik kontrollerini göster</string>
     <string name="pref_ao_showNotifications">Bildirim sayısını görüntüleme</string>
     <string name="pref_ao_showNotificationIcons">Bildirim simgelerini göster</string>
-    <string name="pref_ao_fingerprint">Parmak izi simgesini görüntüleme</string>
-    <string name="pref_ao_fingerprint_margin">Parmak izi marjı</string>
-    <string name="pref_ao_fingerprint_margin_summary">Parmak izi simgesinin altındaki boşluk</string>
     <string name="pref_ao_edgeGlow">Kenar parlaması</string>
     <string name="pref_ao_edgeGlow_summary">Bir bildirim alındığında parlayan kenarlar</string>
     <string name="pref_ao_glowDuration">Parlama süresi (milisaniye cinsinden)</string>

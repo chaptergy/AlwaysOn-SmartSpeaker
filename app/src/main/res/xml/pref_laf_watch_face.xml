@@ -106,20 +106,6 @@
         android:summary="@string/pref_look_and_feel_tint_notifications_summary"
         android:title="@string/pref_look_and_feel_tint_notifications"
         android:dependency="ao_notification_icons" />
-    <SwitchPreference
-        android:defaultValue="false"
-        android:icon="@drawable/ic_fingerprint"
-        android:key="ao_fingerprint"
-        android:summaryOff="@string/pref_disabled"
-        android:summaryOn="@string/pref_enabled"
-        android:title="@string/pref_ao_fingerprint" />
-    <io.github.domi04151309.alwayson.custom.EditIntegerPreference
-        android:defaultValue="200"
-        android:icon="@drawable/ic_fingerprint"
-        android:key="ao_fingerprint_margin"
-        android:summary="@string/pref_ao_fingerprint_margin_summary"
-        android:title="@string/pref_ao_fingerprint_margin"
-        android:dependency="ao_fingerprint" />
     <SeekBarPreference
         android:icon="@drawable/ic_scale"
         android:key="pref_aod_scale_2"

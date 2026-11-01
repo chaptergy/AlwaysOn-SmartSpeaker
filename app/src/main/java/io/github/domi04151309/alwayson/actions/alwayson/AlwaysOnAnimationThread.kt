@@ -47,17 +47,6 @@ class AlwaysOnAnimationThread(
                 screenSize / 2,
                 ANIMATION_DURATION,
             )
-            if (P.getPreferences(activity).getBoolean(
-                    P.SHOW_FINGERPRINT_ICON,
-                    P.SHOW_FINGERPRINT_ICON_DEFAULT,
-                )
-            ) {
-                animationHelper.animate(
-                    viewHolder.fingerprintIcn,
-                    FINGERPRINT_ICON_BURN_IN_OFFSET,
-                    ANIMATION_DURATION,
-                )
-            }
         }
         sleep(animationDelay)
         activity.runOnUiThread {
@@ -66,17 +55,6 @@ class AlwaysOnAnimationThread(
                 screenSize / FRACTIONAL_VIEW_POSITION,
                 ANIMATION_DURATION,
             )
-            if (P.getPreferences(activity).getBoolean(
-                    P.SHOW_FINGERPRINT_ICON,
-                    P.SHOW_FINGERPRINT_ICON_DEFAULT,
-                )
-            ) {
-                animationHelper.animate(
-                    viewHolder.fingerprintIcn,
-                    0f,
-                    ANIMATION_DURATION,
-                )
-            }
         }
     }
 
@@ -97,6 +75,5 @@ class AlwaysOnAnimationThread(
         private const val MILLISECONDS_PER_MINUTE: Long = 60_000
         private const val ANIMATION_DURATION: Int = 10_000
         private const val FRACTIONAL_VIEW_POSITION: Int = 4
-        private const val FINGERPRINT_ICON_BURN_IN_OFFSET: Float = 64f
     }
 }

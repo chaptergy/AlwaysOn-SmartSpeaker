@@ -109,8 +109,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val SHOW_CALENDAR = "ao_calendar"
         const val SHOW_NOTIFICATION_COUNT = "ao_notifications"
         const val SHOW_NOTIFICATION_ICONS = "ao_notification_icons"
-        const val SHOW_FINGERPRINT_ICON = "ao_fingerprint"
-        const val FINGERPRINT_MARGIN = "ao_fingerprint_margin"
         const val BACKGROUND_IMAGE = "ao_background_image"
         const val CUSTOM_BACKGROUND = "custom_background"
         const val EDGE_GLOW = "ao_edgeGlow"
@@ -139,7 +137,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val DISPLAY_COLOR_NOTIFICATION = "display_color_notification"
         const val DISPLAY_COLOR_MESSAGE = "display_color_message"
         const val DISPLAY_COLOR_WEATHER = "display_color_weather"
-        const val DISPLAY_COLOR_FINGERPRINT = "display_color_fingerprint"
         const val DISPLAY_COLOR_EDGE_GLOW = "display_color_edge_glow"
         const val FORCE_BRIGHTNESS_VALUE = "ao_force_brightness_value"
         const val VIBRATION_DURATION = "ao_vibration"
@@ -205,8 +202,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val SHOW_CALENDAR_DEFAULT = false
         const val SHOW_NOTIFICATION_COUNT_DEFAULT = false
         const val SHOW_NOTIFICATION_ICONS_DEFAULT = true
-        const val SHOW_FINGERPRINT_ICON_DEFAULT = false
-        const val FINGERPRINT_MARGIN_DEFAULT = 200
         const val BACKGROUND_IMAGE_DEFAULT = BACKGROUND_IMAGE_NONE
         const val EDGE_GLOW_DEFAULT = false
         const val POCKET_MODE_DEFAULT = false
@@ -233,7 +228,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val DISPLAY_COLOR_NOTIFICATION_DEFAULT = -1
         const val DISPLAY_COLOR_MESSAGE_DEFAULT = -1
         const val DISPLAY_COLOR_WEATHER_DEFAULT = -1
-        const val DISPLAY_COLOR_FINGERPRINT_DEFAULT = -1
         const val DISPLAY_COLOR_EDGE_GLOW_DEFAULT = -1
         const val FORCE_BRIGHTNESS_VALUE_DEFAULT = 50
         const val VIBRATION_DURATION_DEFAULT = 64

@@ -14,10 +14,4 @@
         android:layout_margin="@dimen/edge_glow_width"
         android:padding="?dialogPreferredPadding" />
 
-    <io.github.domi04151309.alwayson.custom.FingerprintView
-        android:id="@+id/fingerprintIcn"
-        android:layout_width="@dimen/aod_fingerprint_size"
-        android:layout_height="@dimen/aod_fingerprint_size"
-        android:layout_gravity="center_horizontal|bottom"
-        android:visibility="gone"/>
 </io.github.domi04151309.alwayson.custom.CustomFrameLayout>

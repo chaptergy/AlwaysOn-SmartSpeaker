@@ -216,20 +216,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         }
     }
 
-    private fun prepareFingerprintIcon() {
-        viewHolder.fingerprintIcn.visibility = View.VISIBLE
-        (viewHolder.fingerprintIcn.layoutParams as ViewGroup.MarginLayoutParams)
-            .bottomMargin = prefs.get(P.FINGERPRINT_MARGIN, P.FINGERPRINT_MARGIN_DEFAULT)
-        val longPressDetector =
-            LongPressDetector({
-                finish()
-            })
-        viewHolder.fingerprintIcn.setOnTouchListener { v, event ->
-            longPressDetector.onTouchEvent(event)
-            v.performClick()
-        }
-    }
-
     private fun prepareProximity() {
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensorEventListener = AlwaysOnSensorEventListener(viewHolder)
@@ -341,11 +327,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
             prefs.get(P.EDGE_GLOW, P.EDGE_GLOW_DEFAULT)
         ) {
             NotificationService.listeners.add(this)
-        }
-
-        // Fingerprint icon
-        if (prefs.get(P.SHOW_FINGERPRINT_ICON, P.SHOW_FINGERPRINT_ICON_DEFAULT)) {
-            prepareFingerprintIcon()
         }
 
         // Proximity

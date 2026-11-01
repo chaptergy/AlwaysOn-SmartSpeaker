@@ -85,7 +85,6 @@
     <string name="pref_look_and_feel_colors_message">Couleur du message</string>
     <string name="pref_look_and_feel_colors_weather">Couleur de la météo</string>
     <string name="pref_look_and_feel_colors_notification">Couleur des notifications</string>
-    <string name="pref_look_and_feel_colors_fingerprint">Couleur de l\’icône de l\’empreinte digitale</string>
     <string name="pref_ao_showClock">Afficher l\’heure</string>
     <string name="pref_ao_showDate">Afficher la date</string>
     <string name="pref_ao_showBatteryIcn">Afficher l\’icône de batterie</string>
@@ -93,9 +92,6 @@
     <string name="pref_ao_showMusicControls">Afficher les contrôles musicaux</string>
     <string name="pref_ao_showNotifications">Afficher le décompte des notifications</string>
     <string name="pref_ao_showNotificationIcons">Afficher l\’icône des notifications</string>
-    <string name="pref_ao_fingerprint">Afficher l\’icône de l\’empreinte digitale</string>
-    <string name="pref_ao_fingerprint_margin">Marge de l\’empreinte digitale</string>
-    <string name="pref_ao_fingerprint_margin_summary">Espace sous l\’icône de l\’empreinte digitale</string>
     <string name="pref_ao_edgeGlow">Lueur des coins</string>
     <string name="pref_ao_edgeGlow_summary">Les coins luisent quand une notification est reçue</string>
     <string name="pref_ao_glowDuration">Durée de la lueur (en millisecondes)</string>
