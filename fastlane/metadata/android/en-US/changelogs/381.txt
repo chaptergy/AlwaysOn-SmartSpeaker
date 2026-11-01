@@ -1,1 +1,0 @@
-This update includes performance improvements, crash fixes, bug fixes, and new edge glow customizations. Furthermore, you can now enable ambient mode.

@@ -1,2 +1,0 @@
-- Ajout de règles
-- Amélioration des performances

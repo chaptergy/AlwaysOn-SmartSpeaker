@@ -1,1 +1,0 @@
-Cette version inclue beaucoup d'amélioration de performance et de changement sous le capôt, non visible, pour que l'application tourne mieux.

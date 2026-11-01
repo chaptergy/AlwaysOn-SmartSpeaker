@@ -1,5 +1,0 @@
-- Ajout de règles
-- Mise à jour de la traduction allemande
-- Ajout d'une traduction espagnole
-- Correction du décompte des notifications
-- Amélioration des performances
