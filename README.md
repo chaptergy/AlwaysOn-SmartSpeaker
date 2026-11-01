@@ -1,33 +1,13 @@
-![App Icon](https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
+![App Icon](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
-# AlwaysOn for Android™
+# AlwaysOn for Smart-Speaker Displays
 
-AlwaysOn is an app for every device with an AMOLED or OLED display.
-It adds an always-on display with various customization options regarding the watch face, the
-behavior, and the background.
-Take a look at your phone and have everything you need in one place: the time, the date, the battery
-state, your notifications, and more.
+AlwaysOn is an Android always-on display app adapted for smart speakers with screens.
+It provides a customizable clock, date, notifications, watch-face styling, behavior, and
+background options while assuming the device is permanently powered and stationary.
 
-<a href="https://f-droid.org/packages/io.github.domi04151309.alwayson">
-  <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-  alt="Get it on F-Droid"
-  height="80"/>
-</a>
-
-## Donate
-
-Support the development by donating.
-
-<a href="https://www.paypal.com/donate/?hosted_button_id=487FTCX52P9WA">
-	<img src="https://img.shields.io/badge/-Donate-black?style=for-the-badge&logo=paypal" alt="Donate">
-</a>
-
-## Previews
-
-<img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" width="18%" /><img src="https://raw.githubusercontent.com/Domi04151309/AlwaysOn/main/fastlane/metadata/android/en-US/images/phoneScreenshots/7.jpg" width="18%" />
-
-<i style="color:gray;">Android, Google Play and the Google Play logo are trademarks of Google
-LLC.</i>
+The smart-speaker version intentionally excludes phone-specific functionality such as battery and
+charging indicators, charging animations, phone-state monitoring, and phone permission/setup flows.
 
 ## Legal Notice
 
@@ -45,5 +25,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-<a href="https://anvil-solutions.com/de/imprint">Impressum</a>

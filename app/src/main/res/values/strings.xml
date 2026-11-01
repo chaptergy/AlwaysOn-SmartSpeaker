@@ -2,7 +2,7 @@
     <string name="device_admin_description">Allow AlwaysOn to turn off your screen</string>
     <string name="notification_listener_description">Show notifications on the always on display</string>
 
-    <string name="service_text">AlwaysOn is running in the background</string>
+    <string name="service_text">AlwaysOn SmartSpeaker is running in the background</string>
     <string name="service_channel">Service channel</string>
 
     <string name="setup_root_failed">Root request failed! Please try again or switch mode!</string>
@@ -24,8 +24,8 @@
     <string name="dialog_device_admin_result">Result</string>
     <string name="dialog_device_admin_error">Wrong result. Try again.</string>
 
-    <string name="app_name" translatable="false">AlwaysOn</string>
-    <string name="app_description">Android app which adds an always on display</string>
+    <string name="app_name" translatable="false">AlwaysOn SmartSpeaker</string>
+    <string name="app_description">Android app which adds an always on display to your smart speaker with a display</string>
 
     <string name="AlwaysOn">Always on display</string>
 
