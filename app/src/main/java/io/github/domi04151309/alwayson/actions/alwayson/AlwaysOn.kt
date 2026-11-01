@@ -15,7 +15,6 @@ import android.hardware.display.DisplayManager
 import android.media.AudioManager
 import android.media.session.MediaSessionManager
 import android.media.session.PlaybackState
-import android.os.BatteryManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -26,14 +25,12 @@ import android.os.Vibrator
 import android.util.Log
 import android.view.Display
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import io.github.domi04151309.alwayson.R
 import io.github.domi04151309.alwayson.actions.OffActivity
 import io.github.domi04151309.alwayson.custom.DoubleTapDetector
-import io.github.domi04151309.alwayson.custom.LongPressDetector
 import io.github.domi04151309.alwayson.helpers.Global
 import io.github.domi04151309.alwayson.helpers.P
 import io.github.domi04151309.alwayson.helpers.Root
@@ -88,31 +85,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
                 intent: Intent,
             ) {
                 when (intent.action) {
-                    Intent.ACTION_BATTERY_CHANGED -> {
-                        val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
-                        if (level <= prefs.get(P.RULES_BATTERY, P.RULES_BATTERY_DEFAULT)) {
-                            finishAndOff()
-                            return
-                        } else if (!servicesRunning) {
-                            return
-                        }
-                        viewHolder.customView.setBatteryStatus(
-                            level,
-                            intent.getIntExtra(
-                                BatteryManager.EXTRA_STATUS,
-                                -1,
-                            ) == BatteryManager.BATTERY_STATUS_CHARGING,
-                        )
-                    }
-
-                    Intent.ACTION_POWER_CONNECTED -> {
-                        if (!Rules.matchesChargingState(this@AlwaysOn)) finishAndOff()
-                    }
-
-                    Intent.ACTION_POWER_DISCONNECTED -> {
-                        if (!Rules.matchesChargingState(this@AlwaysOn)) finishAndOff()
-                    }
-
                     NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED -> {
                         if (!Rules.matchesDoNotDisturbState(this@AlwaysOn)) finishAndOff()
                     }
@@ -309,11 +281,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
 
         // Add DND state change listener
         systemFilter.addAction(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED)
-
-        // Battery
-        systemFilter.addAction(Intent.ACTION_BATTERY_CHANGED)
-        systemFilter.addAction(Intent.ACTION_POWER_CONNECTED)
-        systemFilter.addAction(Intent.ACTION_POWER_DISCONNECTED)
 
         // Music Controls
         if (prefs.get(P.SHOW_MUSIC_CONTROLS, P.SHOW_MUSIC_CONTROLS_DEFAULT)) {

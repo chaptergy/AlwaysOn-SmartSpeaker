@@ -17,9 +17,6 @@
 
     <string name="AlwaysOn">Altijdaan-scherm</string>
 
-    <string name="percent">%1$d%%</string>
-    <string name="charged">%1$d%% opgeladen</string>
-
     <string name="shortcut_disabled">Uitgeschakeld</string>
 
     <!-- Strings related to Settings -->
@@ -29,7 +26,6 @@
     <string name="pref_enabled">Ingeschakeld</string>
     <string name="pref_disabled">Uitgeschakeld</string>
     <string name="pref_always_on">Altijdaan-scherm</string>
-    <string name="pref_charging">Oplaadanimatie</string>
 
     <string name="pref_look_and_feel">Uiterlijk</string>
     <string name="pref_look_and_feel_hour">12-uursklok gebruiken</string>
@@ -43,8 +39,6 @@
     <string name="pref_ao_watch_face">Uurwerk</string>
     <string name="pref_ao_showClock">Tijd tonen</string>
     <string name="pref_ao_showDate">Datum tonen</string>
-    <string name="pref_ao_showBatteryIcn">Accupictogram tonen</string>
-    <string name="pref_ao_showBattery">Accupercentage tonen</string>
     <string name="pref_ao_showNotifications">Aantal meldingen tonen</string>
     <string name="pref_ao_showNotificationIcons">Meldingspictogrammen tonen</string>
     <string name="pref_ao_background">Achtergrond</string>
@@ -71,9 +65,6 @@
     <string name="pref_ao_power_saving_summary">Bespaart energie zolang het altijdaan-scherm wordt getoond</string>
     <string name="pref_ao_double_tap_disabled">Dubbelklik uitschakelen</string>
     <string name="pref_ao_double_tap_disabled_summary">Schakelt dubbeltikken uit om Always On Display te sluiten (niet aanbevolen)</string>
-
-    <string name="pref_look_and_feel_charging">Oplaadanimatiestijl</string>
-    <string name="pref_look_and_feel_charging_summary">Pas de stijl aan van de oplaadanimatie</string>
 
     <string name="pref_look_and_feel_hide_display_cutouts">Scherminkepingen verbergen</string>
     <string name="pref_look_and_feel_hide_display_cutouts_summary">Verberg scherminkepingen bij beeldvullende inhoud</string>

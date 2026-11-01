@@ -46,20 +46,6 @@
         android:title="@string/pref_ao_date_format"
         android:dependency="ao_date" />
     <SwitchPreference
-        android:defaultValue="true"
-        android:icon="@drawable/ic_battery"
-        android:key="ao_batteryIcn"
-        android:summaryOff="@string/pref_disabled"
-        android:summaryOn="@string/pref_enabled"
-        android:title="@string/pref_ao_showBatteryIcn" />
-    <SwitchPreference
-        android:defaultValue="true"
-        android:icon="@drawable/ic_percent"
-        android:key="ao_battery"
-        android:summaryOff="@string/pref_disabled"
-        android:summaryOn="@string/pref_enabled"
-        android:title="@string/pref_ao_showBattery" />
-    <SwitchPreference
         android:defaultValue="false"
         android:icon="@drawable/ic_music_note"
         android:key="ao_musicControls"

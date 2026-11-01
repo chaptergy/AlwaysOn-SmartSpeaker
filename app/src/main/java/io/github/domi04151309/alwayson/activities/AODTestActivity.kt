@@ -15,7 +15,6 @@ class AODTestActivity : Activity() {
         Toast.makeText(this, "testing mode", Toast.LENGTH_SHORT).show()
 
         val view = findViewById<AlwaysOnCustomView>(R.id.view)
-        view.setBatteryStatus(100, false)
         view.musicString = "Artist - Song"
         view.onSkipPreviousClicked = {
             Toast.makeText(this, "left", Toast.LENGTH_SHORT).show()

@@ -28,9 +28,6 @@
 
     <string name="AlwaysOn">Affichage permanent</string>
 
-    <string name="percent">%1$d%%</string>
-    <string name="charged">Chargé à %1$d%%</string>
-
     <string name="shortcut_disabled">Désactivé</string>
 
     <!-- Strings related to Settings -->
@@ -40,7 +37,6 @@
     <string name="pref_enabled">Actuellement activé</string>
     <string name="pref_disabled">Actuellement désactivé</string>
     <string name="pref_always_on">Affichage permanent</string>
-    <string name="pref_charging">Animation de rechargement</string>
 
     <string name="pref_look_and_feel">Apparence et convivialité</string>
 
@@ -79,7 +75,6 @@
     <string name="pref_look_and_feel_colors_summary">Sélection des couleurs pour certains éléments</string>
     <string name="pref_look_and_feel_colors_clock">Couleur de l\’horloge</string>
     <string name="pref_look_and_feel_colors_date">Couleur de la date</string>
-    <string name="pref_look_and_feel_colors_battery">Couleur de la batterie</string>
     <string name="pref_look_and_feel_colors_music_controls">Couleur des contrôles musicaux</string>
     <string name="pref_look_and_feel_colors_calendar">Couleurs des événements du calendrier</string>
     <string name="pref_look_and_feel_colors_message">Couleur du message</string>
@@ -87,8 +82,6 @@
     <string name="pref_look_and_feel_colors_notification">Couleur des notifications</string>
     <string name="pref_ao_showClock">Afficher l\’heure</string>
     <string name="pref_ao_showDate">Afficher la date</string>
-    <string name="pref_ao_showBatteryIcn">Afficher l\’icône de batterie</string>
-    <string name="pref_ao_showBattery">Afficher le pourcentage de la batterie</string>
     <string name="pref_ao_showMusicControls">Afficher les contrôles musicaux</string>
     <string name="pref_ao_showNotifications">Afficher le décompte des notifications</string>
     <string name="pref_ao_showNotificationIcons">Afficher l\’icône des notifications</string>
@@ -133,9 +126,6 @@
     <string name="pref_ao_date_format_illegal">Format illégal</string>
     <string name="pref_ao_calendar">Afficher les événements</string>
     <string name="pref_ao_calendar_summary">Affiches les événements des prochaines 24h sur votre affichage permanent</string>
-
-    <string name="pref_look_and_feel_charging">Aspect de l\’animation de chargement</string>
-    <string name="pref_look_and_feel_charging_summary">Modifie l\’aspect de l\’animation jouée pendant le rechargement</string>
 
     <string name="pref_ao_background_image">Image de fond d’écran</string>
     <string name="pref_ao_background_image_summary">Modifie l\’image sur le fond d\’écran de l\’affichage permanent</string>
@@ -190,12 +180,6 @@
 
     <string name="pref_look_and_feel_rules">Règles</string>
     <string name="pref_look_and_feel_rules_summary">Contrôle quand afficher l\’affichage permanent</string>
-    <string name="pref_look_and_feel_rules_charging_state">État de la charge</string>
-    <string name="pref_look_and_feel_rules_charger">Type de charge</string>
-    <string name="pref_look_and_feel_rules_charger_summary">Choisir quel type de charge est considéré comme une charge</string>
-    <string name="pref_look_and_feel_rules_battery_level">Niveau de la batterie</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary">Affiche seulement au-dessus de %1$d%%</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary_zero">Affiche à n\’importe quel niveau de batterie</string>
     <string name="pref_look_and_feel_rules_time">Période de temps</string>
     <string name="pref_look_and_feel_rules_time_summary">Affiche de %1$s à %2$s</string>
     <string name="pref_look_and_feel_rules_timeout">Délai</string>
@@ -226,8 +210,6 @@
     <string name="help_center_delays_text">Certains constructeurs font primer la durée de vie de la batterie sur les fonctionnalités des applications, ce qui explique que cette application puisse ne fonctionner qu\’avec des délais, voire pas du tout sur certains appareils. Si vous constatez des délais, essayez de désactiver les optimisations de batterie pour cette application ou vérifiez d\’autres paramètres spécifiques au constructeur</string>
     <string name="help_center_delays_button_one">Paramètres de batterie</string>
     <string name="help_center_delays_button_two">Spécificité constructeur</string>
-    <string name="help_center_battery_drain">Comprendre la source d\’un déchargement de batterie</string>
-    <string name="help_center_battery_drain_text">Une des raisons d\’un déchargement de batterie peut être que vous utilisez un téléphone avec un écran LCD. Cette application est conçu pour les téléphones avec un écran OLED pouvant éteindre les pixels noirs de l\’écran pour économiser de l\’énergie. Les écrans LCD ne peuvent pas éteindre les pixels noirs ce qui résulte en une utilisation plus massive de la batterie lorsque l\’affichage est activée. Une autre raison peut être l\’utilisation d\’autres applications en tâche de fond quand l\’affichage permanent fonctionne. Android affichera leur consommation de batterie comme faisant partie de la consommation d\’AlwaysOn.</string>
 
     <string name="loading">Chargement</string>
     <string name="missing_permissions">Permissions manquantes</string>
@@ -249,18 +231,6 @@
     <string name="about_icons_desc">Icônes par Icons8 et Google</string>
     <string name="about_libraries">Bibliothèques</string>
     <string name="about_libraries_desc">Une liste de toutes les bibliothèques utilisées</string>
-
-    <string-array name="pref_look_and_feel_rules_charging_state_display">
-        <item>Afficher à n\’importe quel état de charge</item>
-        <item>Afficher seulement au chargement</item>
-        <item>Afficher seulement au déchargement</item>
-    </string-array>
-
-    <string-array name="pref_look_and_feel_rules_charger_display">
-        <item>AC</item>
-        <item>USB</item>
-        <item>Sans fil</item>
-    </string-array>
 
     <string-array name="pref_look_and_feel_orientation_display">
         <item>Verrouillage automatique</item>

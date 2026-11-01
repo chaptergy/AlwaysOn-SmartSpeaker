@@ -23,8 +23,6 @@ class ForegroundService : Service() {
             ?: 0
         CombinedServiceReceiver.helper = packageName.hashCode()
         val filter = IntentFilter()
-        filter.addAction(Intent.ACTION_POWER_CONNECTED)
-        filter.addAction(Intent.ACTION_POWER_DISCONNECTED)
         filter.addAction(Intent.ACTION_SCREEN_OFF)
         filter.addAction(Intent.ACTION_SCREEN_ON)
         registerReceiver(combinedServiceReceiver, filter)

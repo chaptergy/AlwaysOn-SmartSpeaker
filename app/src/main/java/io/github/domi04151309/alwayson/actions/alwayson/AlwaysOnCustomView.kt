@@ -18,7 +18,6 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import io.github.domi04151309.alwayson.R
 import io.github.domi04151309.alwayson.actions.alwayson.data.Data
-import io.github.domi04151309.alwayson.actions.alwayson.draw.Battery
 import io.github.domi04151309.alwayson.actions.alwayson.draw.Clock
 import io.github.domi04151309.alwayson.actions.alwayson.draw.Date
 import io.github.domi04151309.alwayson.actions.alwayson.draw.Message
@@ -29,7 +28,6 @@ import io.github.domi04151309.alwayson.actions.alwayson.draw.ThemeSpecials
 import io.github.domi04151309.alwayson.actions.alwayson.draw.Utils
 import io.github.domi04151309.alwayson.actions.alwayson.draw.Weather
 import io.github.domi04151309.alwayson.helpers.Global
-import io.github.domi04151309.alwayson.helpers.IconHelper
 import io.github.domi04151309.alwayson.helpers.P
 import java.lang.Integer.max
 import java.text.SimpleDateFormat
@@ -42,9 +40,6 @@ class AlwaysOnCustomView : View {
     private lateinit var timeFormat: SimpleDateFormat
     private lateinit var dateFormat: SimpleDateFormat
     private var customBackground: Bitmap? = null
-    private var batteryIsCharging = false
-    private var batteryLevel = 0
-    private var batteryIcon = R.drawable.ic_battery_unknown
     private var events = listOf<String>()
     private var weather = ""
 
@@ -272,12 +267,6 @@ class AlwaysOnCustomView : View {
                 ) + 2 * utils.padding2
             }
         }
-        if (
-            utils.prefs.get(P.SHOW_BATTERY_ICON, P.SHOW_BATTERY_ICON_DEFAULT) ||
-            utils.prefs.get(P.SHOW_BATTERY_PERCENTAGE, P.SHOW_BATTERY_PERCENTAGE_DEFAULT)
-        ) {
-            utils.viewHeight += utils.getTextHeight(utils.mediumTextSize) + 2 * utils.padding16
-        }
         if (utils.prefs.get(P.SHOW_MUSIC_CONTROLS, P.SHOW_MUSIC_CONTROLS_DEFAULT)) {
             utils.viewHeight += utils.getTextHeight(utils.smallTextSize) + 2 * utils.padding2
         }
@@ -369,23 +358,6 @@ class AlwaysOnCustomView : View {
         // Samsung 3 divider
         ThemeSpecials.drawDivider(canvas, utils, flags, tempHeight)
 
-        // Battery
-        if (utils.prefs.get(P.SHOW_BATTERY_ICON, P.SHOW_BATTERY_ICON_DEFAULT) &&
-            utils.prefs.get(P.SHOW_BATTERY_PERCENTAGE, P.SHOW_BATTERY_PERCENTAGE_DEFAULT)
-        ) {
-            Battery.drawIconAndPercentage(
-                canvas,
-                utils,
-                batteryIcon,
-                batteryLevel,
-                batteryIsCharging,
-            )
-        } else if (utils.prefs.get(P.SHOW_BATTERY_ICON, P.SHOW_BATTERY_ICON_DEFAULT)) {
-            Battery.drawIcon(canvas, utils, batteryIcon, batteryIsCharging)
-        } else if (utils.prefs.get(P.SHOW_BATTERY_PERCENTAGE, P.SHOW_BATTERY_PERCENTAGE_DEFAULT)) {
-            Battery.drawPercentage(canvas, utils, batteryLevel)
-        }
-
         // Music Controls
         if (musicVisible && utils.prefs.get(P.SHOW_MUSIC_CONTROLS, P.SHOW_MUSIC_CONTROLS_DEFAULT)) {
             skipPositions = MusicControls.draw(canvas, utils, musicString)
@@ -452,19 +424,6 @@ class AlwaysOnCustomView : View {
             }
         }
         return false
-    }
-
-    /*
-     * Functions for configuration
-     */
-    fun setBatteryStatus(
-        level: Int,
-        charging: Boolean,
-    ) {
-        batteryIsCharging = charging
-        batteryLevel = level
-        batteryIcon = IconHelper.getBatteryIcon(level)
-        invalidate()
     }
 
     fun notifyNotificationDataChanged() {

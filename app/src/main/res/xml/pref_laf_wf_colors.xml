@@ -17,13 +17,6 @@
         app:cpv_showColorShades="false" />
     <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
         android:defaultValue="0xffffffff"
-        android:icon="@drawable/ic_battery"
-        android:key="display_color_battery"
-        android:title="@string/pref_look_and_feel_colors_battery"
-        app:cpv_showAlphaSlider="true"
-        app:cpv_showColorShades="false" />
-    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
-        android:defaultValue="0xffffffff"
         android:icon="@drawable/ic_music_note"
         android:key="display_color_music_controls"
         android:title="@string/pref_look_and_feel_colors_music_controls"

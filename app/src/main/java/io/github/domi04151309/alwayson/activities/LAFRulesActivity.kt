@@ -30,7 +30,6 @@ class LAFRulesActivity : BaseActivity() {
         private var rulesTimeStartValue = DEFAULT_START_TIME
         private var rulesTimeEndValue = DEFAULT_END_TIME
 
-        private lateinit var rulesBatteryLevel: EditIntegerPreference
         private lateinit var rulesTime: Preference
         private lateinit var rulesTimeout: EditIntegerPreference
 
@@ -40,7 +39,6 @@ class LAFRulesActivity : BaseActivity() {
         ) {
             addPreferencesFromResource(R.xml.pref_laf_rules)
 
-            rulesBatteryLevel = findPreference(P.RULES_BATTERY) ?: error(INVALID_LAYOUT)
             rulesTime = findPreference("rules_time") ?: error(INVALID_LAYOUT)
             rulesTimeout = findPreference(P.RULES_TIMEOUT) ?: error(INVALID_LAYOUT)
             val is24Hour = preferenceManager.sharedPreferences?.getBoolean("hour", false) != true
@@ -88,11 +86,6 @@ class LAFRulesActivity : BaseActivity() {
         }
 
         private fun updateSummaries() {
-            val rulesBatteryLevelValue =
-                preferenceManager.sharedPreferences?.getInt(
-                    P.RULES_BATTERY,
-                    P.RULES_BATTERY_DEFAULT,
-                ) ?: P.RULES_BATTERY_DEFAULT
             rulesTimeStartValue = preferenceManager.sharedPreferences?.getString(
                 "rules_time_start",
                 DEFAULT_START_TIME,
@@ -106,30 +99,12 @@ class LAFRulesActivity : BaseActivity() {
                     P.RULES_TIMEOUT_DEFAULT,
                 ) ?: P.RULES_TIMEOUT_DEFAULT
 
-            if (rulesBatteryLevelValue > Rules.BATTERY_FULL) {
-                preferenceManager.sharedPreferences?.edit {
-                    putInt(P.RULES_BATTERY, P.RULES_BATTERY_DEFAULT)
-                }
-                return
-            }
-
             rulesTime.summary =
                 resources.getString(
                     R.string.pref_look_and_feel_rules_time_summary,
                     rulesTimeStartValue,
                     rulesTimeEndValue,
                 )
-            rulesBatteryLevel.summary =
-                if (rulesBatteryLevelValue > 0) {
-                    resources.getString(
-                        R.string.pref_look_and_feel_rules_battery_level_summary,
-                        rulesBatteryLevelValue,
-                    )
-                } else {
-                    resources.getString(
-                        R.string.pref_look_and_feel_rules_battery_level_summary_zero,
-                    )
-                }
             rulesTimeout.summary =
                 if (rulesTimeoutValue > 0) {
                     resources.getQuantityString(

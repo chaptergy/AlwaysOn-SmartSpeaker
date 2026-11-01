@@ -94,8 +94,6 @@ internal class P(private val prefs: SharedPreferences) {
 
     companion object {
         const val RULES_DISABLE_IN_DO_NOT_DISTURB = "rules_disable_in_do_not_disturb"
-        const val RULES_CHARGING_STATE = "rules_charging_state"
-        const val RULES_BATTERY = "rules_battery_level"
         const val RULES_TIMEOUT = "rules_timeout_sec"
 
         const val ALWAYS_ON = "always_on"
@@ -104,8 +102,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val USER_THEME = "ao_style"
         const val SHOW_CLOCK = "ao_clock"
         const val SHOW_DATE = "ao_date"
-        const val SHOW_BATTERY_ICON = "ao_batteryIcn"
-        const val SHOW_BATTERY_PERCENTAGE = "ao_battery"
         const val SHOW_CALENDAR = "ao_calendar"
         const val SHOW_NOTIFICATION_COUNT = "ao_notifications"
         const val SHOW_NOTIFICATION_ICONS = "ao_notification_icons"
@@ -131,7 +127,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val ANIMATE_MOTION = "ao_smooth_animation"
         const val DISPLAY_COLOR_CLOCK = "display_color_clock"
         const val DISPLAY_COLOR_DATE = "display_color_date"
-        const val DISPLAY_COLOR_BATTERY = "display_color_battery"
         const val DISPLAY_COLOR_MUSIC_CONTROLS = "display_color_music_controls"
         const val DISPLAY_COLOR_CALENDAR = "display_color_calendar"
         const val DISPLAY_COLOR_NOTIFICATION = "display_color_notification"
@@ -143,11 +138,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val EDGE_GLOW_DURATION = "ao_glowDuration"
         const val EDGE_GLOW_DELAY = "ao_glowDelay"
         const val EDGE_GLOW_STYLE = "ao_glowStyle"
-
-        const val CHARGING_STYLE = "charging_style"
-
-        const val RULES_CHARGING_STATE_CHARGING = "charging"
-        const val RULES_CHARGING_STATE_DISCHARGING = "discharging"
 
         const val USER_THEME_GOOGLE = "google"
         const val USER_THEME_ONEPLUS = "oneplus"
@@ -178,17 +168,12 @@ internal class P(private val prefs: SharedPreferences) {
         const val BACKGROUND_IMAGE_TYLER_LASTOVICH_3 = "tyler_lastovich_3"
         const val BACKGROUND_IMAGE_CUSTOM = "custom"
 
-        const val CHARGING_STYLE_CIRCLE = "circle"
-        const val CHARGING_STYLE_FLASH = "flash"
-        const val CHARGING_STYLE_IOS = "ios"
 
         private const val EDGE_GLOW_STYLE_ALL = "all"
         const val EDGE_GLOW_STYLE_VERTICAL = "vertical"
         const val EDGE_GLOW_STYLE_HORIZONTAL = "horizontal"
 
         const val RULES_DISABLE_IN_DO_NOT_DISTURB_DEFAULT = false
-        const val RULES_CHARGING_STATE_DEFAULT = "always"
-        const val RULES_BATTERY_DEFAULT = 0
         const val RULES_TIMEOUT_DEFAULT = 0
 
         const val ALWAYS_ON_DEFAULT = false
@@ -197,8 +182,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val USER_THEME_DEFAULT = USER_THEME_GOOGLE
         const val SHOW_CLOCK_DEFAULT = true
         const val SHOW_DATE_DEFAULT = true
-        const val SHOW_BATTERY_ICON_DEFAULT = true
-        const val SHOW_BATTERY_PERCENTAGE_DEFAULT = true
         const val SHOW_CALENDAR_DEFAULT = false
         const val SHOW_NOTIFICATION_COUNT_DEFAULT = false
         const val SHOW_NOTIFICATION_ICONS_DEFAULT = true
@@ -222,7 +205,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val ANIMATE_MOTION_DEFAULT = false
         const val DISPLAY_COLOR_CLOCK_DEFAULT = -1
         const val DISPLAY_COLOR_DATE_DEFAULT = -1
-        const val DISPLAY_COLOR_BATTERY_DEFAULT = -1
         const val DISPLAY_COLOR_MUSIC_CONTROLS_DEFAULT = -1
         const val DISPLAY_COLOR_CALENDAR_DEFAULT = -1
         const val DISPLAY_COLOR_NOTIFICATION_DEFAULT = -1
@@ -234,7 +216,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val EDGE_GLOW_DURATION_DEFAULT = 2000
         const val EDGE_GLOW_DELAY_DEFAULT = 2000
 
-        const val CHARGING_STYLE_DEFAULT = CHARGING_STYLE_CIRCLE
         const val EDGE_GLOW_STYLE_DEFAULT = EDGE_GLOW_STYLE_ALL
 
         val DOUBLE_TAP_SPEED_DEFAULT = ViewConfiguration.getDoubleTapTimeout()

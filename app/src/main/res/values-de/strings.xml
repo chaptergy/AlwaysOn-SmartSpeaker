@@ -28,9 +28,6 @@
 
     <string name="AlwaysOn">Always On Display</string>
 
-    <string name="percent">%1$d%%</string>
-    <string name="charged">%1$d%% geladen</string>
-
     <string name="shortcut_disabled">Deaktiviert</string>
 
     <!-- Strings related to Settings -->
@@ -40,7 +37,6 @@
     <string name="pref_enabled">Derzeit aktiviert</string>
     <string name="pref_disabled">Derzeit deaktiviert</string>
     <string name="pref_always_on">Always On Display</string>
-    <string name="pref_charging">Ladeanimation</string>
 
     <string name="pref_look_and_feel">Erscheinungsbild</string>
 
@@ -64,7 +60,6 @@
     <string name="pref_look_and_feel_colors_summary">Wähle Farben für bestimmte Elemente</string>
     <string name="pref_look_and_feel_colors_clock">Uhrenfarbe</string>
     <string name="pref_look_and_feel_colors_date">Datumsfarbe</string>
-    <string name="pref_look_and_feel_colors_battery">Akkufarbe</string>
     <string name="pref_look_and_feel_colors_music_controls">Musiksteuerungsfarbe</string>
     <string name="pref_look_and_feel_colors_calendar">Farbe der Kalendererveranstaltungen</string>
     <string name="pref_look_and_feel_colors_message">Nachrichtenfarbe</string>
@@ -72,8 +67,6 @@
     <string name="pref_look_and_feel_colors_notification">Benachrichtigungsfarbe</string>
     <string name="pref_ao_showClock">Zeit anzeigen</string>
     <string name="pref_ao_showDate">Datum anzeigen</string>
-    <string name="pref_ao_showBatteryIcn">Batterieicon anzeigen</string>
-    <string name="pref_ao_showBattery">Batterieladung anzeigen</string>
     <string name="pref_ao_showMusicControls">Musiksteuerung anzeigen</string>
     <string name="pref_ao_showNotifications">Benachrichtigungszähler anzeigen</string>
     <string name="pref_ao_showNotificationIcons">Benachrichtigungsicons anzeigen</string>
@@ -119,9 +112,6 @@
     <string name="pref_ao_calendar">Veranstaltungen anzeigen</string>
     <string name="pref_ao_calendar_summary">Veranstaltungen der nächsten 24 Stunden auf dem AOD anzeigen</string>
 
-    <string name="pref_look_and_feel_charging">Aussehen der Ladeanimation</string>
-    <string name="pref_look_and_feel_charging_summary">Ändert das Aussehen der Ladeanimation</string>
-
     <string name="pref_ao_background_image">Hintergrundbild</string>
     <string name="pref_ao_background_image_summary">Ändert das Hintergurndbild des AODs</string>
     <string name="pref_look_and_feel_hide_display_cutouts">Bildschirmausschnitte ausblenden</string>
@@ -159,12 +149,6 @@
 
     <string name="pref_look_and_feel_rules">Regeln</string>
     <string name="pref_look_and_feel_rules_summary">Wann das Always On Display angezeigt werden soll</string>
-    <string name="pref_look_and_feel_rules_charging_state">Ladezustand</string>
-    <string name="pref_look_and_feel_rules_charger">Ladetyp</string>
-    <string name="pref_look_and_feel_rules_charger_summary">Wählen Sie aus, welche Ladearten als Laden gelten</string>
-    <string name="pref_look_and_feel_rules_battery_level">Akkustand</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary">Nur über %1$d%% anzeigen</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary_zero">Bei jedem Akkustand anzeigen</string>
     <string name="pref_look_and_feel_rules_time">Zeit</string>
     <string name="pref_look_and_feel_rules_time_summary">Von %1$s bis %2$s anzeigen</string>
     <string name="pref_look_and_feel_rules_timeout">Timeout</string>
@@ -195,8 +179,6 @@
     <string name="help_center_delays_text">Einige Hersteller bevorzugen die Akkulaufzeit gegenüber der App-Funktionalität, weshalb diese App auf einigen Geräten möglicherweise nur mit Verzögerungen oder gar nicht funktioniert. Wenn Verzögerungen auftreten, deaktivieren Sie die Batterieoptimierungen für die App oder überprüfen Sie andere herstellerspezifische Einstellungen.</string>
     <string name="help_center_delays_button_one">Batterieeinstellungen</string>
     <string name="help_center_delays_button_two">Herstellerspezifisch</string>
-    <string name="help_center_battery_drain">Quelle des Akkuverbrauchs identifizieren</string>
-    <string name="help_center_battery_drain_text">Ein Grund für den Batterieverbrauch kann sein, dass Sie ein Telefon mit LCD-Display verwenden. Diese App wurde für Telefone mit einem OLED-Display entwickelt, das schwarze Pixel ausschalten kann, um Energie zu sparen. LCD-Anzeigen können schwarze Pixel nicht ausschalten, was dazu führt, dass die Anzeige viel mehr Energie verbraucht, wenn das Always On Display aktiviert ist. Ein weiterer Grund könnte sein, dass andere Apps im Hintergrund ausgeführt werden, während das Always On Display angezeigt wird. Android zeigt den Batterieverbrauch als Teil des Batterieverbrauchs von AlwaysOn an.</string>
 
     <string name="loading">Lädt</string>
     <string name="missing_permissions">Fehlende Berechtigungen</string>
@@ -216,18 +198,6 @@
     <string name="about_icons_desc">Icons von Icons8 und Google</string>
     <string name="about_libraries">Bibliotheken</string>
     <string name="about_libraries_desc">Eine Liste aller verwendeten Bibliotheken</string>
-
-    <string-array name="pref_look_and_feel_rules_charging_state_display">
-        <item>Bei jedem Ladezustand anzeigen</item>
-        <item>Nur während dem Laden anzeigen</item>
-        <item>Nur während dem Entladen anzeigen</item>
-    </string-array>
-
-    <string-array name="pref_look_and_feel_rules_charger_display">
-        <item>Steckdose</item>
-        <item>USB</item>
-        <item>Kabellos</item>
-    </string-array>
 
     <string-array name="pref_look_and_feel_orientation_display">
         <item>Automatisch sperren</item>

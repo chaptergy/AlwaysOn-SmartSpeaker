@@ -30,8 +30,6 @@
     <string name="AlwaysOn">Always on display</string>
 
     <string name="date" translatable="false">EEE, MMMM d</string>
-    <string name="percent">%1$d%%</string>
-    <string name="charged">%1$d%% Charged</string>
     <string name="music" translatable="false">%1$s - %2$s</string>
 
     <string name="shortcut_disabled">Disabled</string>
@@ -43,7 +41,6 @@
     <string name="pref_enabled">Currently enabled</string>
     <string name="pref_disabled">Currently disabled</string>
     <string name="pref_always_on">Always on display</string>
-    <string name="pref_charging">Charging animation</string>
 
     <string name="pref_look_and_feel">Look and feel</string>
 
@@ -82,7 +79,6 @@
     <string name="pref_look_and_feel_colors_summary">Select colors for certain elements</string>
     <string name="pref_look_and_feel_colors_clock">Clock color</string>
     <string name="pref_look_and_feel_colors_date">Date color</string>
-    <string name="pref_look_and_feel_colors_battery">Battery color</string>
     <string name="pref_look_and_feel_colors_music_controls">Music controls color</string>
     <string name="pref_look_and_feel_colors_calendar">Calendar event color</string>
     <string name="pref_look_and_feel_colors_message">Message color</string>
@@ -90,8 +86,6 @@
     <string name="pref_look_and_feel_colors_notification">Notification color</string>
     <string name="pref_ao_showClock">Display the time</string>
     <string name="pref_ao_showDate">Display the date</string>
-    <string name="pref_ao_showBatteryIcn">Display a battery icon</string>
-    <string name="pref_ao_showBattery">Display the battery percentage</string>
     <string name="pref_ao_showMusicControls">Display music controls</string>
     <string name="pref_ao_showNotifications">Display a notification count</string>
     <string name="pref_ao_showNotificationIcons">Display notification icons</string>
@@ -136,14 +130,6 @@
     <string name="pref_ao_date_format_illegal">Illegal format</string>
     <string name="pref_ao_calendar">Show events</string>
     <string name="pref_ao_calendar_summary">Show events in the next 24h on your AOD</string>
-
-    <string name="pref_look_and_feel_charging">Charging animation look</string>
-    <string name="pref_look_and_feel_charging_summary">Changes the look of the charging animation</string>
-    <string-array name="pref_look_and_feel_charging_array_display" translatable="false">
-        <item>Circle</item>
-        <item>Flash</item>
-        <item>iOS</item>
-    </string-array>
 
     <string name="pref_ao_background_image">Background image</string>
     <string name="pref_ao_background_image_summary">Change the background image of the AOD</string>
@@ -199,12 +185,6 @@
 
     <string name="pref_look_and_feel_rules">Rules</string>
     <string name="pref_look_and_feel_rules_summary">Control when to show the AOD</string>
-    <string name="pref_look_and_feel_rules_charging_state">Charging state</string>
-    <string name="pref_look_and_feel_rules_charger">Charging type</string>
-    <string name="pref_look_and_feel_rules_charger_summary">Choose which charging types count as charging</string>
-    <string name="pref_look_and_feel_rules_battery_level">Battery level</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary">Show only above %1$d%%</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary_zero">Show at any battery level</string>
     <string name="pref_look_and_feel_rules_time">Time period</string>
     <string name="pref_look_and_feel_rules_time_summary">Show from %1$s to %2$s</string>
     <string name="pref_look_and_feel_rules_timeout">Timeout</string>
@@ -235,8 +215,6 @@
     <string name="help_center_delays_text">Some manufacturers prefer battery life over app functionality which is why this app may only work with delays or not at all on some devices. If you are experiencing delays try disabling battery optimizations for the app or check other manufacturer-specific settings.</string>
     <string name="help_center_delays_button_one">Battery Settings</string>
     <string name="help_center_delays_button_two">Manufacturer-specific</string>
-    <string name="help_center_battery_drain">Figuring out the source of battery drain</string>
-    <string name="help_center_battery_drain_text">One reason for battery drain could be that you are using a phone with an LCD display. This app is designed for phones with an OLED display that can turn off black pixels to save energy. LCD displays cannot turn off black pixels which will result in the display using a lot more energy when the always on display is enabled.Another reason could be that other apps are running in the background while the always on display is running. Android will display their battery consumption as part of AlwaysOn’s battery consumption.</string>
 
     <string name="loading">Loading</string>
     <string name="missing_permissions">Missing Permissions</string>
@@ -274,28 +252,6 @@
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
         <item>Apache 2.0</item>
-    </string-array>
-
-    <string-array name="pref_look_and_feel_rules_charging_state_display">
-        <item>Show at any charging state</item>
-        <item>Show only while charging</item>
-        <item>Show only while discharging</item>
-    </string-array>
-    <string-array name="pref_look_and_feel_rules_charging_state_values" translatable="false">
-        <item>always</item>
-        <item>charging</item>
-        <item>discharging</item>
-    </string-array>
-
-    <string-array name="pref_look_and_feel_rules_charger_display">
-        <item>AC</item>
-        <item>USB</item>
-        <item>Wireless</item>
-    </string-array>
-    <string-array name="pref_look_and_feel_rules_charger_values" translatable="false">
-        <item>ac</item>
-        <item>usb</item>
-        <item>wireless</item>
     </string-array>
 
     <string-array name="pref_look_and_feel_orientation_display">

@@ -22,8 +22,6 @@
     <string name="dialog_device_admin_error">Yanlış sonuç. Tekrar deneyin.</string>
     <string name="app_description">Her zaman açık bir ekran ekleyen Android uygulaması</string>
     <string name="AlwaysOn">Her zaman ekranda</string>
-    <string name="percent">%1$d%%</string>
-    <string name="charged">%1$d%% Ücretlendirildi</string>
     <string name="shortcut_disabled">Devre dışı</string>
     <!-- Strings related to Settings -->
     <string name="pref_int_failed">Bu değer kullanılamaz</string>
@@ -31,7 +29,6 @@
     <string name="pref_enabled">Şu anda etkin</string>
     <string name="pref_disabled">Şu anda devre dışı</string>
     <string name="pref_always_on">Her zaman ekranda</string>
-    <string name="pref_charging">Şarj animasyonu</string>
     <string name="pref_look_and_feel">Bak ve hisset</string>
     <string name="pref_ao_watch_face">Saat ekranı</string>
     <string name="pref_ao_watch_face_summary">AOD nin saat ekranı ile ilgili ayarlar</string>
@@ -66,7 +63,6 @@
     <string name="pref_look_and_feel_colors_summary">Belirli öğeler için renkleri seçin</string>
     <string name="pref_look_and_feel_colors_clock">Saat rengi</string>
     <string name="pref_look_and_feel_colors_date">Tarih rengi</string>
-    <string name="pref_look_and_feel_colors_battery">Pil rengi</string>
     <string name="pref_look_and_feel_colors_music_controls">Müzik kontrolleri rengi</string>
     <string name="pref_look_and_feel_colors_calendar">Takvim etkinliği rengi</string>
     <string name="pref_look_and_feel_colors_message">Mesaj rengi</string>
@@ -74,8 +70,6 @@
     <string name="pref_look_and_feel_colors_notification">Bildirim rengi</string>
     <string name="pref_ao_showClock">Saati göster</string>
     <string name="pref_ao_showDate">Tarihi göster</string>
-    <string name="pref_ao_showBatteryIcn">Bir pil simgesi görüntüleyin</string>
-    <string name="pref_ao_showBattery">Pil yüzdesini göster</string>
     <string name="pref_ao_showMusicControls">Müzik kontrollerini göster</string>
     <string name="pref_ao_showNotifications">Bildirim sayısını görüntüleme</string>
     <string name="pref_ao_showNotificationIcons">Bildirim simgelerini göster</string>
@@ -120,8 +114,6 @@
     <string name="pref_ao_date_format_illegal">Geçersiz biçim</string>
     <string name="pref_ao_calendar">Etkinlikleri göster</string>
     <string name="pref_ao_calendar_summary">Önümüzdeki 24 saat içindeki etkinlikleri AOD nizde gösterin</string>
-    <string name="pref_look_and_feel_charging">Şarj animasyonu görünümü</string>
-    <string name="pref_look_and_feel_charging_summary">Şarj animasyonunun görünümünü değiştirir</string>
     <string name="pref_ao_background_image">Arka plan görüntüsü</string>
     <string name="pref_ao_background_image_summary">AOD nin arka plan görüntüsünü değiştirme</string>
     <string-array name="pref_ao_background_image_array_display">
@@ -169,12 +161,6 @@
     <string name="pref_look_and_feel_display_size_summary">AOD nin ekran boyutu %1$d%%</string>
     <string name="pref_look_and_feel_rules">Kurallar</string>
     <string name="pref_look_and_feel_rules_summary">AOD nin ne zaman gösterileceğini kontrol edin</string>
-    <string name="pref_look_and_feel_rules_charging_state">Şarj durumu</string>
-    <string name="pref_look_and_feel_rules_charger">Şarj tipi</string>
-    <string name="pref_look_and_feel_rules_charger_summary">Hangi şarj türlerinin şarj olarak sayılacağını seçin</string>
-    <string name="pref_look_and_feel_rules_battery_level">Pil seviyesi</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary">Yalnızca %1$d%% üzerinde göster</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary_zero">Tüm pil seviyelerinde göster</string>
     <string name="pref_look_and_feel_rules_time">Zaman dilimi</string>
     <string name="pref_look_and_feel_rules_time_summary">%1$s ile %2$s arasında göster</string>
     <string name="pref_look_and_feel_rules_timeout">Zaman aşımı</string>
@@ -203,8 +189,6 @@
     <string name="help_center_delays_text">Bazı üreticiler uygulama işlevselliği yerine pil ömrünü tercih eder, bu nedenle bu uygulama yalnızca bazı cihazlarda gecikmelerle çalışabilir veya hiç çalışmayabilir. Gecikmeler yaşıyorsanız uygulama için pil optimizasyonlarını devre dışı bırakmayı deneyin veya üreticiye özel diğer ayarları kontrol edin.</string>
     <string name="help_center_delays_button_one">Pil Ayarları</string>
     <string name="help_center_delays_button_two">Üreticiye özel</string>
-    <string name="help_center_battery_drain">Batarya boşalmasının kaynağını bulma</string>
-    <string name="help_center_battery_drain_text">Pilin boşalmasının bir nedeni, LCD ekranlı bir telefon kullanmanız olabilir. Bu uygulama, enerji tasarrufu sağlamak için siyah pikselleri kapatabilen OLED ekrana sahip telefonlar için tasarlanmıştır. LCD ekranlar siyah pikselleri kapatamaz, bu da her zaman açık ekran etkinleştirildiğinde ekranın çok daha fazla enerji kullanmasına neden olur. Başka bir neden de, her zaman açık ekran çalışırken diğer uygulamaların arka planda çalışması olabilir. Android, pil tüketimini AlwaysOn un pil tüketiminin bir parçası olarak görüntüleyecektir.</string>
     <string name="loading">Yükleniyor</string>
     <string name="missing_permissions">Eksik İzinler</string>
     <string name="permissions_notification_access">Bu özellik için bildirim erişimini açın</string>
@@ -224,16 +208,6 @@
     <string name="about_icons_desc">Icons8 ve Google dan Simgeler</string>
     <string name="about_libraries">Kütüphaneler</string>
     <string name="about_libraries_desc">Kullanılan tüm kitaplıkların listesi</string>
-    <string-array name="pref_look_and_feel_rules_charging_state_display">
-      <item>Herhangi bir şarj durumunda göster</item>
-      <item>Yalnızca şarj olurken göster</item>
-      <item>Yalnızca boşaltma sırasında göster</item>
-    </string-array>
-    <string-array name="pref_look_and_feel_rules_charger_display">
-      <item>AC</item>
-      <item>USB</item>
-      <item>Kablosuz</item>
-    </string-array>
     <string-array name="pref_look_and_feel_orientation_display">
       <item>Otomatik kilit</item>
       <item>Dikey</item>

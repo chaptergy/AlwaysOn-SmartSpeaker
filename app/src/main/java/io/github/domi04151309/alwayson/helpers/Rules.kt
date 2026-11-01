@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.icu.util.Calendar
-import android.os.BatteryManager
 import io.github.domi04151309.alwayson.R
 
 class Rules(context: Context) {
@@ -53,44 +52,9 @@ class Rules(context: Context) {
     fun canShow(context: Context): Boolean =
         isAlwaysOnDisplayEnabled(context) &&
             matchesDoNotDisturbState(context) &&
-            matchesChargingState(context) &&
-            matchesBatteryPercentage(context) &&
             isInTimePeriod()
 
     companion object {
-        const val BATTERY_FULL: Int = 100
-
-        private fun getBatteryStatus(c: Context): Intent? =
-            IntentFilter(Intent.ACTION_BATTERY_CHANGED).let { filter ->
-                c.registerReceiver(
-                    null,
-                    filter,
-                )
-            }
-
-        private fun isCharging(context: Context): Boolean {
-            val chargingState: Int =
-                getBatteryStatus(context)
-                    ?.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1)
-                    ?: return true
-            return if (chargingState > 0) {
-                P.getPreferences(context).getStringSet(
-                    "rules_charger_type",
-                    context.resources.getStringArray(R.array.pref_look_and_feel_rules_charger_values)
-                        .toSet(),
-                )?.contains(
-                    when (chargingState) {
-                        BatteryManager.BATTERY_PLUGGED_AC -> "ac"
-                        BatteryManager.BATTERY_PLUGGED_USB -> "usb"
-                        BatteryManager.BATTERY_PLUGGED_WIRELESS -> "wireless"
-                        else -> ""
-                    },
-                ) == true
-            } else {
-                false
-            }
-        }
-
         fun matchesDoNotDisturbState(context: Context): Boolean {
             val ruleDisableInDoNotDisturb =
                 P.getPreferences(context).getBoolean(
@@ -100,18 +64,6 @@ class Rules(context: Context) {
             if (!ruleDisableInDoNotDisturb) return true
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             return notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_ALL
-        }
-
-        fun matchesChargingState(context: Context): Boolean {
-            val ruleChargingState =
-                P.getPreferences(context).getString(
-                    P.RULES_CHARGING_STATE,
-                    P.RULES_CHARGING_STATE_DEFAULT,
-                )
-            if (ruleChargingState == P.RULES_CHARGING_STATE_DEFAULT) return true
-            val charging = isCharging(context)
-            return (ruleChargingState == P.RULES_CHARGING_STATE_CHARGING && charging) ||
-                (ruleChargingState == P.RULES_CHARGING_STATE_DISCHARGING && !charging)
         }
 
         fun isAlwaysOnDisplayEnabled(context: Context): Boolean =
@@ -125,13 +77,5 @@ class Rules(context: Context) {
                 "rules_ambient_mode",
                 false,
             )
-
-        fun matchesBatteryPercentage(context: Context): Boolean =
-            (
-                getBatteryStatus(context)?.getIntExtra(
-                    BatteryManager.EXTRA_LEVEL,
-                    0,
-                ) ?: BATTERY_FULL
-            ) > P.getPreferences(context).getInt(P.RULES_BATTERY, P.RULES_BATTERY_DEFAULT)
     }
 }

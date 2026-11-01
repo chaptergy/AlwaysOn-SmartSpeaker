@@ -17,9 +17,6 @@
 
     <string name="AlwaysOn">Siempre en pantalla</string>
 
-    <string name="percent">%1$d%%</string>
-    <string name="charged">%1$d%% cargado</string>
-
     <string name="shortcut_disabled">Desactivado</string>
 
     <!-- Strings related to Settings -->
@@ -29,7 +26,6 @@
     <string name="pref_enabled">Actualmente activado</string>
     <string name="pref_disabled">Actualmente desactivado</string>
     <string name="pref_always_on">Always on display</string>
-    <string name="pref_charging">Cargando animación</string>
 
     <string name="pref_look_and_feel">Look and feel</string>
 
@@ -51,8 +47,6 @@
     <string name="pref_look_and_feel_ao_summary">Cambia el aspecto de lo que siempre está en exhibición</string>
     <string name="pref_ao_showClock">Muestra la hora</string>
     <string name="pref_ao_showDate">Muestra la fecha</string>
-    <string name="pref_ao_showBatteryIcn">Muestra un icono de batería</string>
-    <string name="pref_ao_showBattery">Muestra el porcentaje de batería</string>
     <string name="pref_ao_showNotifications">Muestra un recuento de notificaciones</string>
     <string name="pref_ao_showNotificationIcons">Muestra los iconos de notificación</string>
     <string name="pref_ao_edgeGlow">Resplandor del borde</string>
@@ -80,9 +74,6 @@
     <string name="pref_ao_double_tap_disabled">Desactivar el doble toque</string>
     <string name="pref_ao_double_tap_disabled_summary">Desactiva el doble toque para salir del AOD (no recomendado)</string>
 
-    <string name="pref_look_and_feel_charging">Mirada de animación de carga</string>
-    <string name="pref_look_and_feel_charging_summary">Cambia el aspecto de la animación de carga</string>
-
     <string name="pref_look_and_feel_hide_display_cutouts">Ocultar los recortes de la pantalla</string>
     <string name="pref_look_and_feel_hide_display_cutouts_summary">Ocultar recortes de pantalla en el contenido de la pantalla completa</string>
     <string name="pref_look_and_feel_orientation">Orientación</string>
@@ -101,10 +92,6 @@
 
     <string name="pref_look_and_feel_rules">Reglas</string>
     <string name="pref_look_and_feel_rules_summary">Controla cuando mostrar el AOD</string>
-    <string name="pref_look_and_feel_rules_charging_state">Estado de carga</string>
-    <string name="pref_look_and_feel_rules_battery_level">Nivel de la batería</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary">Muestra sólo por encima de %1$d%%</string>
-    <string name="pref_look_and_feel_rules_battery_level_summary_zero">Muestra en cualquier nivel de la batería</string>
     <string name="pref_look_and_feel_rules_time">Período de tiempo</string>
     <string name="pref_look_and_feel_rules_time_summary">Muestra de %1$s a %2$s</string>
     <string name="pref_look_and_feel_rules_timeout">Sin tiempo</string>
@@ -124,12 +111,6 @@
 
     <string name="about">Acerca de</string>
     <string name="about_summary">Sobre la aplicación</string>
-
-    <string-array name="pref_look_and_feel_rules_charging_state_display">
-        <item>Mostrar en cualquier estado de carga</item>
-        <item>Mostrar sólo mientras se carga</item>
-        <item>Muestra sólo mientras se descarga</item>
-    </string-array>
 
     <string-array name="pref_look_and_feel_orientation_display">
         <item>Autobloquear</item>

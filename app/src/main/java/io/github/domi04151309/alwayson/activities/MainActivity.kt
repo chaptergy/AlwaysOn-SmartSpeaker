@@ -199,11 +199,6 @@ class MainActivity : BaseActivity() {
                 "pref_behavior",
                 Intent(requireContext(), LAFBehaviorActivity::class.java),
             )
-            PreferenceScreenHelper.linkPreferenceToActivity(
-                this,
-                P.CHARGING_STYLE,
-                Intent(requireContext(), LAFChargingLookActivity::class.java),
-            )
             findPreference<Preference>("dark_mode")?.setOnPreferenceClickListener {
                 activity?.recreate()
                 true
