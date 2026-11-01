@@ -109,8 +109,6 @@
     <string name="pref_ao_force_brightness_summary">Tap to change the forced brightness</string>
     <string name="pref_ao_force_brightness_title">Brightness</string>
     <string name="pref_ao_force_brightness_example">This is how bright the text on your always on display will appear.</string>
-    <string name="pref_ao_pocket_mode">Pocket mode</string>
-    <string name="pref_ao_pocket_mode_summary">Disables the always on display in your pocket\nWarning: Sensor usage may cause increased battery usage!</string>
     <string name="pref_ao_dnd">Turn on Do Not Disturb</string>
     <string name="pref_ao_dnd_summary">Turns on Do Not Disturb mode while the always on display is running</string>
     <string name="pref_ao_disable_on_dnd">Disable in Do Not Disturb mode</string>

@@ -9,8 +9,6 @@ import android.content.IntentFilter
 import android.content.res.Configuration
 import android.graphics.Point
 import android.graphics.drawable.TransitionDrawable
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.hardware.display.DisplayManager
 import android.media.AudioManager
 import android.media.session.MediaSessionManager
@@ -60,10 +58,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
 
     // Battery saver
     private var userPowerSaving: Boolean = false
-
-    // Proximity
-    private var sensorManager: SensorManager? = null
-    private var sensorEventListener: AlwaysOnSensorEventListener? = null
 
     // DND
     private var notificationManager: NotificationManager? = null
@@ -188,11 +182,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         }
     }
 
-    private fun prepareProximity() {
-        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-        sensorEventListener = AlwaysOnSensorEventListener(viewHolder)
-    }
-
     private fun prepareDoNotDisturb() {
         notificationManager =
             getSystemService(NOTIFICATION_SERVICE) as NotificationManager
@@ -296,11 +285,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
             NotificationService.listeners.add(this)
         }
 
-        // Proximity
-        if (prefs.get(P.POCKET_MODE, P.POCKET_MODE_DEFAULT)) {
-            prepareProximity()
-        }
-
         // DND
         if (prefs.get(P.DO_NOT_DISTURB, P.DO_NOT_DISTURB_DEFAULT)) {
             prepareDoNotDisturb()
@@ -386,14 +370,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         ) {
             Root.shell("settings put global heads_up_notifications_enabled 0")
         }
-        if (prefs.get(P.POCKET_MODE, P.POCKET_MODE_DEFAULT)) {
-            sensorManager?.registerListener(
-                sensorEventListener,
-                sensorManager?.getDefaultSensor(Sensor.TYPE_PROXIMITY),
-                SENSOR_DELAY_SLOW,
-                SENSOR_DELAY_SLOW,
-            )
-        }
     }
 
     override fun onStop() {
@@ -432,11 +408,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
             )
         ) {
             Root.shell("settings put global heads_up_notifications_enabled 1")
-        }
-        if (prefs.get(P.POCKET_MODE, P.POCKET_MODE_DEFAULT)) {
-            sensorManager?.unregisterListener(
-                sensorEventListener,
-            )
         }
     }
 
@@ -477,7 +448,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
     companion object {
         private const val SMALL_DELAY: Long = 300
         private const val MILLISECONDS_PER_SECOND: Long = 1_000
-        private const val SENSOR_DELAY_SLOW: Int = 1_000_000
         private const val MINIMUM_ANIMATION_DURATION: Int = 100
         private const val HALF: Float = 0.5f
         private var instance: AlwaysOn? = null

@@ -90,8 +90,6 @@
     <string name="pref_ao_force_brightness_summary">Tippen Sie, um die Helligkeit zu ändern</string>
     <string name="pref_ao_force_brightness_title">Helligkeit</string>
     <string name="pref_ao_force_brightness_example">So hell erscheint der Text auf Ihrem Always On Display.</string>
-    <string name="pref_ao_pocket_mode">Taschenmodus</string>
-    <string name="pref_ao_pocket_mode_summary">Deaktiviert das Always On Display in Ihrer Tasche\nWarnung: Die Verwendung von Sensoren kann zu einer erhöhten Akkunutzung führen!</string>
     <string name="pref_ao_dnd">Nicht-stören einschalten</string>
     <string name="pref_ao_dnd_summary">Schaltet den Nicht-stören-Modus ein, während das Always On Display läuft</string>
     <string name="pref_ao_disable_on_dnd">Im Nicht-stören-Modus deaktivieren</string>

@@ -10,7 +10,6 @@ Take a look at your phone and have everything you need in one place: the time, t
 - Edge glow
 - Rules
 - Double tap to wake
-- Pocket mode
 - Do not disturb mode
 - Adjustable brightness
 - Quick tiles

@@ -108,7 +108,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val BACKGROUND_IMAGE = "ao_background_image"
         const val CUSTOM_BACKGROUND = "custom_background"
         const val EDGE_GLOW = "ao_edgeGlow"
-        const val POCKET_MODE = "ao_pocket_mode"
         const val DO_NOT_DISTURB = "ao_dnd"
         const val DISABLE_HEADS_UP_NOTIFICATIONS = "heads_up"
         const val USE_12_HOUR_CLOCK = "hour"
@@ -187,7 +186,6 @@ internal class P(private val prefs: SharedPreferences) {
         const val SHOW_NOTIFICATION_ICONS_DEFAULT = true
         const val BACKGROUND_IMAGE_DEFAULT = BACKGROUND_IMAGE_NONE
         const val EDGE_GLOW_DEFAULT = false
-        const val POCKET_MODE_DEFAULT = false
         const val DO_NOT_DISTURB_DEFAULT = false
         const val DISABLE_HEADS_UP_NOTIFICATIONS_DEFAULT = false
         const val USE_12_HOUR_CLOCK_DEFAULT = false
