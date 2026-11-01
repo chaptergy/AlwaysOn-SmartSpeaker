@@ -59,6 +59,11 @@ object NotificationIcons {
                         index / NOTIFICATION_ROW_LENGTH * utils.drawableSize,
                 )
             }
+            utils.updateVerticalViewBounds(
+                drawable.bounds.top.toFloat(),
+                drawable.bounds.bottom.toFloat(),
+            )
+            utils.updateViewBounds(drawable.bounds.left.toFloat(), drawable.bounds.right.toFloat())
             drawable.draw(canvas)
         } catch (exception: Exception) {
             Log.e(Global.LOG_TAG, exception.toString())

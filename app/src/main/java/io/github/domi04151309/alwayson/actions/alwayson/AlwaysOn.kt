@@ -41,7 +41,6 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
     @JvmField
     internal var servicesRunning: Boolean = false
 
-    private var offsetX: Float = 0f
     internal lateinit var viewHolder: AlwaysOnViewHolder
     internal lateinit var prefs: P
 
@@ -105,8 +104,7 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
             (getSystemService(DISPLAY_SERVICE) as DisplayManager)
                 .getDisplay(Display.DEFAULT_DISPLAY)
                 .getSize(size)
-            offsetX = (size.x - size.x * prefs.displayScale()) * -HALF
-            viewHolder.customView.translationX = offsetX
+            viewHolder.customView.translationX = 0f
         }
 
         // Brightness
@@ -296,7 +294,7 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         }
 
         // Animation
-        animationThread = AlwaysOnAnimationThread(this, viewHolder, offsetX)
+        animationThread = AlwaysOnAnimationThread(this, viewHolder)
         animationThread.start()
 
         // DoubleTap

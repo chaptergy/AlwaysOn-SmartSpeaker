@@ -9,7 +9,7 @@
 
     <io.github.domi04151309.alwayson.actions.alwayson.AlwaysOnCustomView
         android:id="@+id/customView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/edge_glow_width"
         android:padding="?dialogPreferredPadding" />

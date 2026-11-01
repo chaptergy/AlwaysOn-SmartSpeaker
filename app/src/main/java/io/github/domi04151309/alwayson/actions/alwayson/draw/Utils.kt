@@ -10,6 +10,8 @@ import androidx.preference.PreferenceManager
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 import io.github.domi04151309.alwayson.helpers.P
 import kotlin.math.cos
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.sin
 
 class Utils(
@@ -41,6 +43,23 @@ class Utils(
 
     @JvmField
     internal var viewHeight = 0f
+
+    @JvmField
+    internal var viewWidth = 0f
+
+    @JvmField
+    internal var viewOffsetX = 0f
+
+    @JvmField
+    internal var viewOffsetY = 0f
+
+    private var viewRight = 0f
+
+    private var viewBottom = 0f
+
+    private var hasHorizontalViewBounds = false
+
+    private var hasVerticalViewBounds = false
 
     @JvmField
     internal val prefs: P
@@ -94,6 +113,39 @@ class Utils(
             context.resources.displayMetrics,
         )
 
+    internal fun resetViewBounds() {
+        viewWidth = 0f
+        viewOffsetX = 0f
+        viewOffsetY = 0f
+        viewRight = 0f
+        viewBottom = 0f
+        hasHorizontalViewBounds = false
+        hasVerticalViewBounds = false
+    }
+
+    internal fun updateViewBounds(left: Float, right: Float) {
+        if (!hasHorizontalViewBounds) {
+            viewOffsetX = left
+            viewRight = right
+            hasHorizontalViewBounds = true
+        } else {
+            viewOffsetX = min(viewOffsetX, left)
+            viewRight = max(viewRight, right)
+        }
+        viewWidth = viewRight - viewOffsetX
+    }
+
+    internal fun updateVerticalViewBounds(top: Float, bottom: Float) {
+        if (!hasVerticalViewBounds) {
+            viewOffsetY = top
+            viewBottom = bottom
+            hasVerticalViewBounds = true
+        } else {
+            viewOffsetY = min(viewOffsetY, top)
+            viewBottom = max(viewBottom, bottom)
+        }
+    }
+
     /*
      * Drawing functions
      */
@@ -106,8 +158,16 @@ class Utils(
         paint: Paint,
         offsetX: Int = 0,
     ) {
+        val top = viewHeight
         viewHeight += paddingTop
         for (line in text.split("\n")) {
+            val textWidth = paint.measureText(line)
+            val textX = horizontalRelativePoint + offsetX
+            when (paint.textAlign) {
+                Paint.Align.LEFT -> updateViewBounds(textX, textX + textWidth)
+                Paint.Align.CENTER -> updateViewBounds(textX - textWidth / 2, textX + textWidth / 2)
+                Paint.Align.RIGHT -> updateViewBounds(textX - textWidth, textX)
+            }
             viewHeight -= paint.ascent()
             canvas.drawText(
                 line,
@@ -117,6 +177,7 @@ class Utils(
             )
         }
         viewHeight += paddingBottom + paint.descent()
+        updateVerticalViewBounds(top, viewHeight)
     }
 
     internal fun drawVector(
@@ -144,6 +205,11 @@ class Utils(
                     y + drawableSize / 2,
                 )
             }
+            updateVerticalViewBounds(
+                vector.bounds.top.toFloat(),
+                vector.bounds.bottom.toFloat(),
+            )
+            updateViewBounds(vector.bounds.left.toFloat(), vector.bounds.right.toFloat())
             vector.draw(canvas)
         }
     }
@@ -160,11 +226,17 @@ class Utils(
             } else {
                 getTextHeight(bigTextSize) * MINUTE_HAND_LENGTH
             }
+        val centerX = horizontalRelativePoint
+        val endX = centerX + cos(angle) * handRadius
+        val centerY = viewHeight + getTextHeight(bigTextSize)
+        val endY = centerY + sin(angle) * handRadius
+        updateVerticalViewBounds(min(centerY, endY), max(centerY, endY))
+        updateViewBounds(min(centerX, endX), max(centerX, endX))
         canvas.drawLine(
-            horizontalRelativePoint,
-            viewHeight + getTextHeight(bigTextSize),
-            horizontalRelativePoint + cos(angle) * handRadius,
-            viewHeight + getTextHeight(bigTextSize) + sin(angle) * handRadius,
+            centerX,
+            centerY,
+            endX,
+            endY,
             paint,
         )
     }

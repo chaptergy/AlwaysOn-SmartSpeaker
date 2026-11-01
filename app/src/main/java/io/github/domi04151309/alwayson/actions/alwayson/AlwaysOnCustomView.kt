@@ -43,6 +43,18 @@ class AlwaysOnCustomView : View {
     private var events = listOf<String>()
     private var weather = ""
 
+    public val contentOffsetX: Float
+        get() = utils.viewOffsetX
+
+    public val contentWidth: Float
+        get() = utils.viewWidth
+
+    public val contentOffsetY: Float
+        get() = utils.viewOffsetY
+
+    public val contentHeight: Float
+        get() = utils.viewHeight
+
     var musicVisible: Boolean = false
         set(value) {
             field = value
@@ -326,7 +338,8 @@ class AlwaysOnCustomView : View {
             } else {
                 measuredWidth / 2f
             }
-        utils.viewHeight = 0f
+        utils.viewHeight = paddingTop.toFloat()
+        utils.resetViewBounds()
     }
 
     @Suppress("CyclomaticComplexMethod")
@@ -391,6 +404,9 @@ class AlwaysOnCustomView : View {
         if (utils.prefs.get(P.SHOW_NOTIFICATION_ICONS, P.SHOW_NOTIFICATION_ICONS_DEFAULT)) {
             NotificationIcons.draw(canvas, utils, width)
         }
+
+        utils.viewHeight += paddingBottom
+        utils.updateVerticalViewBounds(paddingTop.toFloat(), utils.viewHeight)
     }
 
     override fun performClick(): Boolean {

@@ -31,6 +31,11 @@ object Clock {
                 utils.getTextHeight(utils.bigTextSize),
                 utils.paint,
             )
+            val clockRadius = utils.getTextHeight(utils.bigTextSize)
+            utils.updateViewBounds(
+                utils.horizontalRelativePoint - clockRadius,
+                utils.horizontalRelativePoint + clockRadius,
+            )
             utils.paint.style = Paint.Style.FILL
 
             val calendar = Calendar.getInstance()

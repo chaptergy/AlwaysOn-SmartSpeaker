@@ -12,5 +12,6 @@
     <dimen name="aod_spacing_8">8dp</dimen>
 
     <dimen name="common_corner_radius">8dp</dimen>
+    <dimen name="screen_edge_margin">48dp</dimen>
 
 </resources>
