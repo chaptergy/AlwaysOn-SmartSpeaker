@@ -114,7 +114,7 @@ internal class P(private val prefs: SharedPreferences) {
         const val SHOW_AM_PM = "am_pm"
         const val DATE_FORMAT = "ao_date_format"
         const val FORCE_BRIGHTNESS = "ao_force_brightness"
-        const val DISABLE_DOUBLE_TAP = "ao_double_tap_disabled"
+        const val TAP_TO_WAKE_MODE = "ao_tap_to_wake_mode"
         const val DOUBLE_TAP_SPEED = "ao_double_tap_speed"
         const val SHOW_MUSIC_CONTROLS = "ao_musicControls"
         const val MESSAGE = "ao_message"
@@ -192,7 +192,7 @@ internal class P(private val prefs: SharedPreferences) {
         const val SHOW_AM_PM_DEFAULT = false
         const val DATE_FORMAT_DEFAULT = "EEE, MMMM d"
         const val FORCE_BRIGHTNESS_DEFAULT = false
-        const val DISABLE_DOUBLE_TAP_DEFAULT = false
+        const val TAP_TO_WAKE_MODE_DEFAULT = "double-tap"
         const val SHOW_MUSIC_CONTROLS_DEFAULT = false
         const val MESSAGE_DEFAULT = ""
         const val SHOW_WEATHER_DEFAULT = false

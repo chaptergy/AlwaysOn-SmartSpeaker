@@ -113,8 +113,6 @@
     <string name="pref_ao_power_saving_summary">Active l\’économiseur de batterie du système quand l\’affichage permanent est activé</string>
     <string name="pref_ao_double_tap_speed">Vitesse du double appui</string>
     <string name="pref_ao_double_tap_speed_summary">Le temps maximum entre deux appuis (en millisecondes)</string>
-    <string name="pref_ao_double_tap_disabled">Désactiver l\’appui double</string>
-    <string name="pref_ao_double_tap_disabled_summary">Désactive le double appui pour sortir de l\’affichage permanent (non recommandé)</string>
     <string name="pref_ao_message">Message</string>
     <string name="pref_ao_message_summary">Un message qui est affiché sur l\’affichage permanent</string>
     <string name="pref_ao_date_format">Format de la date</string>

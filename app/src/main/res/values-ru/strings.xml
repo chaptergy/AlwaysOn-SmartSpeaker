@@ -60,8 +60,6 @@
     <string name="pref_ao_disable_on_dnd_summary">Отключает AOD при активном режиме «Не беспокоить»</string>
     <string name="pref_ao_power_saving">Режим энергосбережения (root)</string>
     <string name="pref_ao_power_saving_summary">Экономит заряд, когда работает AOD</string>
-    <string name="pref_ao_double_tap_disabled">Отключить пробуждение по двойному нажатию</string>
-    <string name="pref_ao_double_tap_disabled_summary">Отключает пробуждение по двойному нажатию для выхода из AOD (не рекомендуется)</string>
 
     <string name="pref_look_and_feel_hide_display_cutouts">Скрыть вырезы на дисплее</string>
     <string name="pref_look_and_feel_hide_display_cutouts_summary">Скрыть вырезы в полноэкранном контенте</string>

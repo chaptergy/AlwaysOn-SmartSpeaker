@@ -61,8 +61,6 @@
     <string name="pref_ao_disable_on_dnd_summary">Schakelt het altijdaan-scherm uit wanneer de nietstoren-modus actief is</string>
     <string name="pref_ao_power_saving">Energiebesparingsmodus (root)</string>
     <string name="pref_ao_power_saving_summary">Bespaart energie zolang het altijdaan-scherm wordt getoond</string>
-    <string name="pref_ao_double_tap_disabled">Dubbelklik uitschakelen</string>
-    <string name="pref_ao_double_tap_disabled_summary">Schakelt dubbeltikken uit om Always On Display te sluiten (niet aanbevolen)</string>
 
     <string name="pref_look_and_feel_hide_display_cutouts">Scherminkepingen verbergen</string>
     <string name="pref_look_and_feel_hide_display_cutouts_summary">Verberg scherminkepingen bij beeldvullende inhoud</string>

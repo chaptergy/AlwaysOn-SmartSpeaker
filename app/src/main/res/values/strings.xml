@@ -117,8 +117,6 @@
     <string name="pref_ao_power_saving_summary">Turns on the system\’s power saver mode when the always on display is enabled</string>
     <string name="pref_ao_double_tap_speed">Double-tap speed</string>
     <string name="pref_ao_double_tap_speed_summary">The time two taps can be apart (in milliseconds)</string>
-    <string name="pref_ao_double_tap_disabled">Disable double-tap</string>
-    <string name="pref_ao_double_tap_disabled_summary">Disables double-tap to exit the AOD (not recommended)</string>
     <string name="pref_ao_message">Message</string>
     <string name="pref_ao_message_summary">A message that is displayed on the AOD</string>
     <string name="pref_ao_date_format">Date format</string>
@@ -263,6 +261,17 @@
         <item>landscape</item>
     </string-array>
 
+    <string-array name="pref_look_and_feel_tap_to_wake_mode_display">
+        <item>Double Tap</item>
+        <item>Single Tap</item>
+        <item>Disable (not recommended)</item>
+    </string-array>
+    <string-array name="pref_look_and_feel_tap_to_wake_mode_values" translatable="false">
+        <item>double-tap</item>
+        <item>single-tap</item>
+        <item>disable</item>
+    </string-array>
+
     <string-array name="pref_ao_glowStyle_display">
         <item>All sides</item>
         <item>Left and right sides</item>
@@ -278,4 +287,6 @@
         <item>Icons8</item>
         <item>Google</item>
     </string-array>
+    <string name="pref_ao_tap_to_wake_mode">Tap to wake mode</string>
+    <string name="pref_ao_tap_to_wake_mode_summary">Changes mode to exit the AOD</string>
 </resources>

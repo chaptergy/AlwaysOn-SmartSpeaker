@@ -31,18 +31,20 @@
         android:key="ao_force_brightness"
         android:summary="@string/pref_ao_force_brightness_summary"
         android:title="@string/pref_ao_force_brightness" />
+    <ListPreference
+        android:defaultValue="double-tap"
+        android:entries="@array/pref_look_and_feel_tap_to_wake_mode_display"
+        android:entryValues="@array/pref_look_and_feel_tap_to_wake_mode_values"
+        android:icon="@drawable/ic_touch_app"
+        android:key="ao_tap_to_wake_mode"
+        android:summary="@string/pref_ao_tap_to_wake_mode_summary"
+        android:title="@string/pref_ao_tap_to_wake_mode" />
     <io.github.domi04151309.alwayson.custom.EditIntegerPreference
         android:defaultValue="300"
         android:icon="@drawable/ic_touch_app"
         android:key="ao_double_tap_speed"
         android:summary="@string/pref_ao_double_tap_speed_summary"
         android:title="@string/pref_ao_double_tap_speed" />
-    <SwitchPreference
-        android:defaultValue="false"
-        android:icon="@drawable/ic_touch_app"
-        android:key="ao_double_tap_disabled"
-        android:summary="@string/pref_ao_double_tap_disabled_summary"
-        android:title="@string/pref_ao_double_tap_disabled" />
     <SwitchPreference
         android:defaultValue="false"
         android:icon="@drawable/ic_dnd"

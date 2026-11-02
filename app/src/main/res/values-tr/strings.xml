@@ -101,8 +101,6 @@
     <string name="pref_ao_power_saving_summary">Her zaman açık ekran etkinleştirildiğinde sistemin güç tasarrufu modunu açar</string>
     <string name="pref_ao_double_tap_speed">İki kez dokunma hızı</string>
     <string name="pref_ao_double_tap_speed_summary">İki musluğun birbirinden ayrılabileceği süre (milisaniye cinsinden)</string>
-    <string name="pref_ao_double_tap_disabled">Çift dokunmayı devre dışı bırak</string>
-    <string name="pref_ao_double_tap_disabled_summary">AOD den çıkmak için iki kez dokunmayı devre dışı bırakır (önerilmez)</string>
     <string name="pref_ao_message">Mesaj</string>
     <string name="pref_ao_message_summary">AOD de görüntülenen bir mesaj</string>
     <string name="pref_ao_date_format">Tarih formatı</string>

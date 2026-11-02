@@ -212,8 +212,8 @@ class AlwaysOnAnimationThread(
 
         private const val TINY_DELAY: Long = 10
         private const val MILLISECONDS_PER_SECOND: Long = 1_000
-        private const val MILLISECONDS_PER_MINUTE: Long = 200 // TODO change back to 60_000
-        private const val ANIMATION_DURATION: Int = 1_000 // TODO change back to 20_000
+        private const val MILLISECONDS_PER_MINUTE: Long = 60_000
+        private const val ANIMATION_DURATION: Int = 20_000
         private const val MIN_DIRECTION_COMPONENT: Float = 0.001f
         private const val DIRECTION_JITTER: Float = 0.1f
         private const val CLOCKWISE_DIRECTION_BIAS: Float = 0.05f

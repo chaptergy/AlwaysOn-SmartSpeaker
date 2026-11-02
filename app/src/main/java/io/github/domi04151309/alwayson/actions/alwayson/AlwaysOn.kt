@@ -217,29 +217,36 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         }
     }
 
-    private fun prepareDoubleTap() {
-        val doubleTapDetector =
-            DoubleTapDetector({
-                val duration = prefs.get(P.VIBRATION_DURATION, P.VIBRATION_DURATION_DEFAULT).toLong()
-                if (duration > 0) {
-                    val vibrator =
-                        getSystemService(VIBRATOR_SERVICE) as Vibrator
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        vibrator.vibrate(
-                            VibrationEffect.createOneShot(
-                                duration,
-                                VibrationEffect.DEFAULT_AMPLITUDE,
-                            ),
-                        )
-                    } else {
-                        @Suppress("DEPRECATION")
-                        vibrator.vibrate(duration)
-                    }
+    private fun prepareTapToWake(singleTap: Boolean) {
+        val wake = {
+            val duration =
+                prefs.get(P.VIBRATION_DURATION, P.VIBRATION_DURATION_DEFAULT).toLong()
+            if (duration > 0) {
+                val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vibrator.vibrate(
+                        VibrationEffect.createOneShot(
+                            duration,
+                            VibrationEffect.DEFAULT_AMPLITUDE,
+                        ),
+                    )
+                } else {
+                    @Suppress("DEPRECATION")
+                    vibrator.vibrate(duration)
                 }
-                finish()
-            }, prefs.get(P.DOUBLE_TAP_SPEED, P.DOUBLE_TAP_SPEED_DEFAULT))
+            }
+            finish()
+        }
+        val doubleTapDetector = if (singleTap) {
+            null
+        } else {
+            DoubleTapDetector(
+                wake,
+                prefs.get(P.DOUBLE_TAP_SPEED, P.DOUBLE_TAP_SPEED_DEFAULT),
+            )
+        }
         viewHolder.frame.setOnTouchListener { v, event ->
-            doubleTapDetector.onTouchEvent(event)
+            doubleTapDetector?.onTouchEvent(event) ?: wake()
             v.performClick()
         }
     }
@@ -297,9 +304,10 @@ class AlwaysOn : OffActivity(), NotificationService.OnNotificationsChangedListen
         animationThread = AlwaysOnAnimationThread(this, viewHolder)
         animationThread.start()
 
-        // DoubleTap
-        if (!prefs.get(P.DISABLE_DOUBLE_TAP, P.DISABLE_DOUBLE_TAP_DEFAULT)) {
-            prepareDoubleTap()
+        // Tap to wake
+        val tapToWakeMode = prefs.get(P.TAP_TO_WAKE_MODE, P.TAP_TO_WAKE_MODE_DEFAULT)
+        if (tapToWakeMode != "disabled") {
+            prepareTapToWake(tapToWakeMode == "single-tap")
         }
 
         // Call recognition
