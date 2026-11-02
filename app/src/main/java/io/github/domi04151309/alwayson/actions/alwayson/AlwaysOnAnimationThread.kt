@@ -47,6 +47,17 @@ class AlwaysOnAnimationThread(
         maxY = screenSizeY - screenEdgeMarginPx - (view.top + view.pivotY + (
                 view.contentHeight - view.pivotY
                 ) * view.scaleY)
+
+        if (maxX < minX) {
+            val midpoint = (minX + maxX) / 2f
+            maxX = midpoint
+            minX = midpoint
+        }
+        if (maxY < minY) {
+            val midpoint = (minY + maxY) / 2f
+            maxY = midpoint
+            minY = midpoint
+        }
     }
 
     private fun preAnimation() {
@@ -56,7 +67,7 @@ class AlwaysOnAnimationThread(
         updateScreenSize()
         currentX = (minX + maxX) / 2f
         currentY = (minY + maxY) / 2f
-        chooseRandomDirection()
+        chooseNewDirection()
         activity.runOnUiThread {
             viewHolder.customView.translationX = currentX
             viewHolder.customView.translationY = currentY
@@ -78,7 +89,30 @@ class AlwaysOnAnimationThread(
         }
     }
 
-    private fun chooseRandomDirection() {
+    private fun chooseNewDirection() {
+        val hitX =
+            (currentX <= minX && directionX < 0f) ||
+                (currentX >= maxX && directionX > 0f)
+        val hitY =
+            (currentY <= minY && directionY < 0f) ||
+                (currentY >= maxY && directionY > 0f)
+
+        if (hitX || hitY) {
+            val reflectedDirection = reflectDirection(
+                directionX = directionX,
+                directionY = directionY,
+                jitterX = Random.nextFloat() * 2f * DIRECTION_JITTER - DIRECTION_JITTER,
+                jitterY = Random.nextFloat() * 2f * DIRECTION_JITTER - DIRECTION_JITTER,
+                hitX = hitX,
+                hitY = hitY,
+                hasHorizontalSpace = maxX - minX > MIN_DIRECTION_COMPONENT,
+                hasVerticalSpace = maxY - minY > MIN_DIRECTION_COMPONENT,
+            )
+            directionX = reflectedDirection.first
+            directionY = reflectedDirection.second
+            return
+        }
+
         do {
             directionX = if (maxX - minX > MIN_DIRECTION_COMPONENT) {
                 Random.nextFloat() * 2f - 1f
@@ -112,7 +146,7 @@ class AlwaysOnAnimationThread(
             (currentY <= minY && directionY < 0f) ||
             (currentY >= maxY && directionY > 0f)
         ) {
-            chooseRandomDirection()
+            chooseNewDirection()
         }
 
         val nextX = (currentX + directionX * MOVEMENT_STEP_PX).coerceIn(minX, maxX)
@@ -131,12 +165,58 @@ class AlwaysOnAnimationThread(
         }
     }
 
-    companion object {
+    internal companion object {
+        fun reflectDirection(
+            directionX: Float,
+            directionY: Float,
+            jitterX: Float,
+            jitterY: Float,
+            hitX: Boolean,
+            hitY: Boolean,
+            hasHorizontalSpace: Boolean,
+            hasVerticalSpace: Boolean,
+        ): Pair<Float, Float> {
+            var reflectedX = if (hitX) -directionX else directionX
+            var reflectedY = if (hitY) -directionY else directionY
+            val clockwiseBiasX = -reflectedY * CLOCKWISE_DIRECTION_BIAS
+            val clockwiseBiasY = reflectedX * CLOCKWISE_DIRECTION_BIAS
+
+            if (hasHorizontalSpace) {
+                reflectedX = (reflectedX + clockwiseBiasX + jitterX).coerceIn(-1f, 1f)
+                if (hitX) {
+                    reflectedX = if (directionX <= 0f) {
+                        reflectedX.coerceAtLeast(MIN_DIRECTION_COMPONENT)
+                    } else {
+                        reflectedX.coerceAtMost(-MIN_DIRECTION_COMPONENT)
+                    }
+                }
+            } else {
+                reflectedX = 0f
+            }
+
+            if (hasVerticalSpace) {
+                reflectedY = (reflectedY + clockwiseBiasY + jitterY).coerceIn(-1f, 1f)
+                if (hitY) {
+                    reflectedY = if (directionY <= 0f) {
+                        reflectedY.coerceAtLeast(MIN_DIRECTION_COMPONENT)
+                    } else {
+                        reflectedY.coerceAtMost(-MIN_DIRECTION_COMPONENT)
+                    }
+                }
+            } else {
+                reflectedY = 0f
+            }
+
+            return reflectedX to reflectedY
+        }
+
         private const val TINY_DELAY: Long = 10
         private const val MILLISECONDS_PER_SECOND: Long = 1_000
-        private const val MILLISECONDS_PER_MINUTE: Long = 60_000
-        private const val ANIMATION_DURATION: Int = 10_000
+        private const val MILLISECONDS_PER_MINUTE: Long = 200 // TODO change back to 60_000
+        private const val ANIMATION_DURATION: Int = 1_000 // TODO change back to 20_000
         private const val MIN_DIRECTION_COMPONENT: Float = 0.001f
+        private const val DIRECTION_JITTER: Float = 0.1f
+        private const val CLOCKWISE_DIRECTION_BIAS: Float = 0.05f
         private const val MOVEMENT_STEP_PX: Float = 50F
     }
 }
